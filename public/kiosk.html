@@ -973,7 +973,7 @@ function dismissValidationAndBack() {
 /* ── AI CALL ── */
 async function runAI(forceRetake) {
   try {
-    const res = await fetch(`${BACKEND}/analyze`,{
+    const res = await fetch(BACKEND, {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({

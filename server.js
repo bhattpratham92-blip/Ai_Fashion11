@@ -6,7 +6,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Read API key from .env file
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
@@ -14,6 +14,10 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "kiosk.html"));
+});
 
 // ── Session Cache (3 minutes) ──────────────────────────────
 const sessionCache = new Map();

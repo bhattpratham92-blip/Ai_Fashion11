@@ -1158,11 +1158,11 @@ document.getElementById('pattern-list').innerHTML =
       ${c.name}
     </div>`).join('');
 
-   generateQR(r);
+   //generateQR(r);
 }
 
 /* ── SIMPLE QR (canvas-drawn pattern — placeholder) ── */
- function generateQR(r) {
+/*function generateQR(r) {
   const qrBox = document.querySelector(".qr-box");
   qrBox.innerHTML = "";
 
@@ -1176,7 +1176,7 @@ document.getElementById('pattern-list').innerHTML =
     text: qrData,
     width: 220,
     height: 220
-   });}
+   });}*/
 
 function showCacheChoice(previousData){
   navigate('screen-loading','screen-camera');
